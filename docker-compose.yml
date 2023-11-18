@@ -1,0 +1,24 @@
+version: "3"
+services:
+  astro:
+    build:
+      context: .
+      target: prod
+    ports:
+      - 4321:4321
+  directus:
+    image: directus/directus
+    ports:
+      - 8055:8055
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+      - ./directus/extensions:/directus/extensions
+    environment:
+      - KEY
+      - SECRET
+      - ADMIN_EMAIL
+      - ADMIN_PASSWORD
+      - DB_CLIENT
+      - DB_FILENAME
+      - WEBSOCKETS_ENABLED

@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
+    "dev": "docker compose -f docker-compose.yml -f docker-compose-dev.yml up --build",
+    "prod": "docker compose up --build",
+    "astro:dev": "astro dev",
+    "astro:build": "astro check && astro build",
+    "astro:preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {

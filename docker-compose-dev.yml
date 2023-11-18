@@ -1,0 +1,8 @@
+services:
+  astro:
+    build:
+      target: dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/directus # exclude directus folder for astro
